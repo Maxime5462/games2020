@@ -5,7 +5,7 @@ function getGames()
 {
   $db = dbConnect();
 
-  $stmt = $db->prepare('SELECT * FROM game');
+  $stmt = $db->prepare('SELECT * FROM game ORDER BY name');
 
   $stmt->execute();
 

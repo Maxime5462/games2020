@@ -14,7 +14,7 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
             <div class="navbar-nav">
-                <a class="nav-item nav-link" href="#">Liste des jeux</a>
+                <a class="nav-item nav-link" href="?route=games">Liste des jeux</a>
             </div>
         </div>
     </nav>

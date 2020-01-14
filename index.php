@@ -13,7 +13,7 @@ if ($route === 'players') {
 if ($route === 'game') {
     require('controllers/game.php');
     $id = $_GET['id'];
-    showTeam($id);
+    showGame($id);
 }
 if ($route === 'matchs') {
     require('controllers/matchs.php');
