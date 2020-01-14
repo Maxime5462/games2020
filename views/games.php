@@ -18,7 +18,6 @@
                 <p class="card-text col-6 ">
                     <p><?php echo $game['description']; ?></p>
                     <p style="font-weight: bold;">Sortie :<?php echo $game['date']; ?></p>
-                    <a href="?route=matchs&id=<?php echo $game['id']; ?>" class="btn btn-primary">Jeux</a>
                 </p>
 
 
