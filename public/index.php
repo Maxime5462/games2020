@@ -19,7 +19,7 @@
         </div>
     </nav>
     <?php echo $content; ?>
-<footer style="text-align:center">
+<footer style="text-align:center; background-color:black;color:white;">
  Maxime Leszczynski - Copyright © 2020
 </footer>
 </body>

@@ -1,5 +1,8 @@
 <?php $title = "Game"; ?>
 <?php ob_start(); ?>
+<?php var_dump($games);
+?>
+<?php echo $games['cover']; ?>
 <div class="card mt-3 col-6" style="width: 18rem;">
     <img class="card-img-top" style="height: 300px;weight:50px;"src="<?php echo $games['cover']; ?>" alt="Card image cap">
 </div>
@@ -10,9 +13,8 @@
         </a>
     </p>
     <p class="card-text col-6 ">
-        <p><?php echo $game['description']; ?></p>
+        <p><?php echo $games['description']; ?></p>
         <p style="font-weight: bold;">Sortie :<?php echo $game['date']; ?></p>
-        <a href="?route=matchs&id=<?php echo $game['id']; ?>" class="btn btn-primary">Jeux</a>
     </p>
 
 
@@ -30,18 +32,18 @@
 
             </tr>
         </thead>
-        <?php foreach ($players as $player) { ?>
-            <tbody>
-                <tr>
-                    <td><img src="<?php echo $games['name_editor']; ?>" alt="p"></td>
-                    <td><?php echo $games['dates']; ?></td>
-                    <td><?php echo $games['birthday_date']; ?></td>
-                    <td><a href="<?php echo $games['link']; ?>">En savoir plus
-                    </a></td>
 
-                </tr>
-            </tbody>
-        <?php } ?>
+        <tbody>
+            <tr>
+                <td><img src="<?php echo $games['name_editor']; ?>" alt="p"></td>
+                <td><?php echo $games[4]; ?></td>
+                <td><?php echo $games['birthday_date']; ?></td>
+                <td><a href="<?php echo $games['link']; ?>">En savoir plus
+                </a></td>
+
+            </tr>
+        </tbody>
+
     </table>
 </div>
 

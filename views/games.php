@@ -1,5 +1,6 @@
-<?php $title = "Teams"; ?>
+<?php $title = "Games"; ?>
 <?php ob_start(); ?>
+
 
 <h1 class="mt-3"style="text-transform: uppercase;text-align:center;color:blue;"><br>Liste de jeux vidéos</h1>
 
@@ -27,7 +28,32 @@
         <?php } ?>
     </div>
 </div>
+<?php
+$page = (!empty($_GET['page']) ? $_GET['page'] : 1);
+// Partie "Liens"
+$nombredElementsTotal=194;
+$limite=20;
+/* On calcule le nombre de pages */
+$nombreDePages = ceil($nombredElementsTotal / $limite);
 
+/* Si on est sur la première page, on n'a pas besoin d'afficher de lien
+* vers la précédente. On va donc l'afficher que si on est sur une autre
+* page que la première */
+if ($page > 1):
+    ?><a href="?page=<?php echo $page - 1; ?>">Page précédente</a> — <?php
+endif;
+
+/* On va effectuer une boucle autant de fois que l'on a de pages */
+for ($i = 1; $i <= $nombreDePages; $i++):
+    ?><a href="?page=<?php echo $i; ?>"><?php echo $i; ?></a> <?php
+endfor;
+
+/* Avec le nombre total de pages, on peut aussi masquer le lien
+* vers la page suivante quand on est sur la dernière */
+if ($page < $nombreDePages):
+    ?>— <a href="?page=<?php echo $page + 1; ?>">Page suivante</a><?php
+endif;
+?>
 
 <?php $content = ob_get_clean(); ?>
 <?php require('public/index.php'); ?>
