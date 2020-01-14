@@ -1,8 +1,9 @@
 <?php $title = "Game"; ?>
 <?php ob_start(); ?>
 <?php var_dump($games);
+if (isset($games['cover'])) { $cover = $games['cover']; }
 ?>
-<?php echo $games['cover']; ?>
+<?php echo $cover; ?>
 <div class="card mt-3 col-6" style="width: 18rem;">
     <img class="card-img-top" style="height: 300px;weight:50px;"src="<?php echo $games['cover']; ?>" alt="Card image cap">
 </div>
