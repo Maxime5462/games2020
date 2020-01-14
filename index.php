@@ -1,17 +1,17 @@
 <?php
 
-$route = isset($_GET['route']) ? $_GET['route'] : 'teams';
+$route = isset($_GET['route']) ? $_GET['route'] : 'games';
 
-if ($route === 'teams') {
-    require('controllers/teams.php');
-    listTeam();
+if ($route === 'games') {
+    require('controllers/games.php');
+    listGame();
 }
 if ($route === 'players') {
     require('controllers/players.php');
     listPlayer();
 }
-if ($route === 'team') {
-    require('controllers/team.php');
+if ($route === 'game') {
+    require('controllers/game.php');
     $id = $_GET['id'];
     showTeam($id);
 }
