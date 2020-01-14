@@ -3,12 +3,18 @@ require('utils/db.php');
 
 function getGames()
 {
-  $db = dbConnect();
+    $db = dbConnect();
+    $page = (!empty($_GET['page']) ? $_GET['page'] : 1);
+    $limite = 20;
 
-  $stmt = $db->prepare('SELECT * FROM game ORDER BY name');
+    $debut = ($page - 1) * $limite;
 
-  $stmt->execute();
+    $stmt = $db->prepare('SELECT * FROM game ORDER BY name LIMIT :limite OFFSET :debut');
 
-  return $stmt->fetchAll(PDO::FETCH_ASSOC);
+    $stmt->bindValue('debut', $debut, PDO::PARAM_INT);
+    $stmt->bindValue('limite', $limite, PDO::PARAM_INT);
+    $stmt->execute();
+
+    return $stmt->fetchAll(PDO::FETCH_ASSOC);
 }
 ?>

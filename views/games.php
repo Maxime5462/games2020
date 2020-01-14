@@ -28,7 +28,10 @@
         <?php } ?>
     </div>
 </div>
+
 <?php
+
+    
 $page = (!empty($_GET['page']) ? $_GET['page'] : 1);
 // Partie "Liens"
 $nombredElementsTotal=194;
